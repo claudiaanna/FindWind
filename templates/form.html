@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body style="background-color:#002750">
+	<div class="center-on-page">  
+		<p class='f1'> Wybierz miejsce </p>
+
+		<form class="form-inline" method="POST" action="{{ url_for('result') }}">
+		   <div class="select">
+		    <select name="comp_select" class="selectpicker form-control">
+		    {% for o in data %}
+		     <option value="{{ o.name }}">{{ o.name }}</option>
+		    {% endfor %}
+		    </select>
+		   </div>
+		    <button type="submit" class="btn">OK</button>
+		</form>
+	</div>
+</body>
+</html>
+
+

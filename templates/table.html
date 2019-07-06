@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="background-color:#002750">
+
+	<div>
+		<p class="f1">{{ city }} </p>
+	</div>
+
+	<img src="{{ url_for('static', filename=yr_plot) }}" width="735" height="1078" align="left">
+	<img src="{{ url_for('static', filename=wf_plot) }}" width="735" height="1078" align="right">
+
+	<div>
+		<table style="float: left" class="darkTable">
+		  <thead>
+		    <tr>
+		      <th scope="col">Dzień</th>
+		      <th scope="col">Godzina</th>
+		      <th scope="col">Temperatura</th>
+		      <th scope="col">Prędkość wiatru </br> [knots]</th>
+		      <th scope="col">Prędkość wiatru </br> [m/s]</th>
+		      <th scope="col">Kierunek </br> wiatru</th> 
+		      <th scope="col">Opady</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for d in wf_data %}
+			    <tr>
+			    	<div>
+					      <th scope="row">{{ d.date }}</th>
+					      <td>{{ d.hour }}</td>
+					      <td>{{ d.temp }} *C</td>
+					      <td>{{ d.wind_speed_kts }}</td>
+					      <td>{{ d.wind_speed_mps }}</td>
+					      <td>{{ d.wind_dir }}</td>
+					      <td>{{ d.prec }}</td>
+					  </div>
+			    </tr>
+			  {% endfor %}
+		  </tbody>
+		</table>
+	</div>
+
+	<div>
+		<table style="float: right" class="darkTable" >
+		  <thead>
+		    <tr>
+		      <th scope="col">Dzień</th>
+		      <th scope="col">Godzina</th>
+		      <th scope="col">Temperatura</th>
+		      <th scope="col">Prędkość wiatru </br> [knots]</th>
+		      <th scope="col">Prędkość wiatru </br> [m/s]</th>
+		      <th scope="col">Kierunek </br> wiatru</th>
+		      <th scope="col">Opady</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	{% for d in yr_data %}
+			    <tr>
+			    	<div>
+					      <th scope="row">{{ d.date }}</th>
+					      <td>{{ d.hour }}</td>
+					      <td>{{ d.temp }} *C</td>
+					      <td>{{ d.wind_speed_kts }}</td>
+					      <td>{{ d.wind_speed_mps }}</td>
+					      <td>{{ d.wind_dir }}</td>
+					      <td>{{ d.prec }}</td>
+					  </div>
+			    </tr>
+			  {% endfor %}
+		  </tbody>
+		</table>
+	</div>
+
+</body>
+</html>
