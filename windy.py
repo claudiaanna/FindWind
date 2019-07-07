@@ -43,9 +43,9 @@ def yrno(location):
         forecast = Forcast(date = date, hour = hour, temp = temp, wind_dir = wind_dir,
                             wind_speed_kts = wind_speed_kts, wind_speed_mps = wind_speed_mps, prec = prec)
         forecasts.append(forecast)
-
+    print(forecast)
     return forecasts
-    
+        
 
 def wfinder(location):
     locs = {'Chałupy':'hel_chalupy', 'Jastarnia':'jastarnia',
@@ -90,7 +90,7 @@ def wfinder(location):
             temp = int(temperature[i].get_text())
             wind_dir = wind_direction[i].get_text().replace(' ', '').replace('\n', '')
             wind_speed_kts = int(wind_speed[i].get_text().replace('\n', ''))
-            wind_speed_mps = int(wind_speed_kts * MPS_TO_KTS)
+            wind_speed_mps = int(wind_speed_kts * KTS_TO_MPS)
             prec = int(prec_table[i])
 
             pretty_date = re.search(r'\w+, (\w+) (\d{2}) (\d{2})', date)

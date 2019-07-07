@@ -1,6 +1,6 @@
 body {
-  color: #002750;
-  font-family: fantasy;
+  color: #003B48;
+  font-family: sans-serif;
   text-align: center;
 }
 .center-on-page {
@@ -11,94 +11,44 @@ body {
 }
 .f1 {
   text-align: center;
-  font: 60px Arial;
-  color:#9ab3d5;
+  font: 60px sans-serif;
+  color:#f4b350;
 }
 
 /* Reset Select */
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
   border: 0 !important;
-  background: #3470aa;
-  background-image: none;
-}
-/* Custom Select */
-.select {
-  position: relative;
-  display: block;
-  width: 20em;
-  height: 3em;
-  line-height: 3;
-  background: #3470aa;
-  overflow: hidden;
-  border-radius: .25em;
-}
-select {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0 0 0 .5em;
-  color: #fff;
-  cursor: pointer;
-}
-select::-ms-expand {
-  display: none;
-}
-/* Arrow */
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0 1em;
-  background: #34495e;
-  pointer-events: none;
-}
-/* Transition */
-.select:hover::after {
-  color: #f39c12;
-}
-.select::after {
-  -webkit-transition: .25s all ease;
-  -o-transition: .25s all ease;
-  transition: .25s all ease;
-}
+  background: #4C6784;
+  width: 300px;
+  height: 50px;
 
-button{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
-  border: 0 !important;
-  background: #3470aa;
-  background-image: none;
-  width: 100%;
-  height: 40px;
   margin: 0;
-  margin-top: 20px;
-  color: #fff;
+  text-align: center;
+  color: #bebebe;
+  font-size: 16px;
   cursor: pointer;
-  border-radius: .25em;
+  overflow: hidden;
+  border-radius: .40em;  
 }
-.button:hover{
-  color: #f39c12;
+/*Button*/
+button{
+  border: 0 !important;
+  background: #4C6784;
+  width: 300px;
+  height: 50px;
+  margin-top: 20px;
+  color: #f4b350;
+  font-size: 16px;
+  border-radius: .40em;
 }
 
 table.darkTable {
-  font-family: fantasy;
+  font-family: sans-serif;
   background-color: #002750;
   text-align: center;
 }
 table.darkTable td, table.darkTable th {
-  border: 2px solid #193652;
+  border: 2px solid #4C6784;
   font-size: 16px;
   font-weight: normal;
   color: #939EAD;
@@ -111,12 +61,11 @@ table.darkTable tbody td {
 }
 
 table.darkTable thead {
-  background: #193652;
+  background: #4C6784;
 }
 table.darkTable thead th {
   font-size: 18px;
-  color: #F39C12;
+  color: #f4b350;
   text-align: center;
-  /*border-left: 2px solid #4A4A4A;*/
 }
 

@@ -58,32 +58,32 @@ def plot(forecasts, path):
 
     font = {'family': 'sans-serif',
         'weight': 'normal',
-        'color' : '#F39C12'
+        'color' : '#f4b350'
         }
 
     plt.rcParams['figure.figsize'] = (15,22)
     fig, ax = plt.subplots(nrows=4, ncols=1, sharex=True, sharey=False,gridspec_kw={'height_ratios': [1.5,1,2.5,0.6]})
     plt.subplots_adjust(left=0.05, right=0.95, bottom=0.15, top=0.95, hspace=0.5)
-    plt.xticks(rotation = 90)
-    plt.tick_params(labelsize = 20, labelcolor = '#9ab3d5')
+    plt.xticks(rotation = 50)
+    plt.tick_params(labelsize = 20, labelcolor = '#bebebe')
     
 
     ax[0].scatter(date, temp, vmin=-25, vmax=40, s = 500, c = c_temp, cmap = cm_temp, alpha = 0.75)
     ax[0].set_ylabel('Temperatura [*C]', size = 30, rotation=0, fontdict=font)
     ax[0].get_yaxis().set_label_coords(0.5,1)
-    ax[0].tick_params(labelsize = 20, labelcolor = '#9ab3d5')
+    ax[0].tick_params(labelsize = 20, labelcolor = '#bebebe')
     ax[0].yaxis.set_ticks(np.arange(temp_min-5,temp_max+5, 2))
 
     ax[1].scatter(date, prec, vmin=-40, vmax=20, s = 500, c = c_prec, alpha = 0.75, cmap = cm_prec)
     ax[1].set_ylabel('Opady [mm/h]', size = 30, rotation=0, fontdict=font)
     ax[1].get_yaxis().set_label_coords(0.5,1)
-    ax[1].tick_params(labelsize = 20, labelcolor = '#9ab3d5')
+    ax[1].tick_params(labelsize = 20, labelcolor = '#bebebe')
     ax[1].yaxis.set_ticks(np.arange(prec_min,prec_max+2, 2))
 
     ax[2].scatter(date, speed, vmin=0, vmax=30, s = 500, c = c_speed, alpha = 0.75, cmap = cm_speed)
     ax[2].set_ylabel('Prędkość wiatru [m/s]', size = 30, rotation=0, fontdict=font)
     ax[2].get_yaxis().set_label_coords(0.5,1)
-    ax[2].tick_params(labelsize = 20, labelcolor = '#9ab3d5')
+    ax[2].tick_params(labelsize = 20, labelcolor = '#bebebe')
     ax[2].yaxis.set_ticks(np.arange(speed_min,speed_max+5, 2))
 
     ax[3].quiver(date, len(date)*[0], u*4, v*4, scale = 0.2,scale_units = 'inches', width = 0.002)
