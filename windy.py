@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import datetime
 import re
 
-DEBUG = True
+DEBUG = False
 MPS_TO_KTS = 1.9438445
 KTS_TO_MPS = 0.5144444
 
